@@ -34,7 +34,7 @@ def actualizardatos(descuento):
         resultado=actualizar in c
 
         if (resultado==True):
-            print ("sepuede actualizar")
+            print ()
             menu2="1_actualizar nombre\n2_actualizar saldo\n3_actualizar telefono\nque desea hacer: "
             i='si'
             while (i == 'si'):
@@ -42,7 +42,7 @@ def actualizardatos(descuento):
                 if(adatos==1):
                     d=(c[1])
                     c.remove(d)
-                    nuevo=input("ingrese el nuevo nombre: ")
+                    nuevo=input("\ningrese el nuevo nombre: ")
                     c.insert(1,nuevo)
                 elif (adatos==2):
                     d=(c[3])
@@ -56,17 +56,14 @@ def actualizardatos(descuento):
                     nuevo=input("ingrese el nuevo numero: ")
                     c.insert(2,nuevo)
 
-                i=input("ingrese si para actualizar otro dato de lo contrario ingrese no: ")
+                i=input("\ningrese si para actualizar otro dato de lo contrario ingrese no: ")
             break
         elif (resultado==False):
-            print()
-
-            
+            print()   
     inicio()
 
-
 def verdatos():
-    menu3="1_ver todos los datos\n2_buscar cliente\nque desea hacer: "
+    menu3="\n1_ver todos los datos\n2_buscar cliente\nque desea hacer: "
     prg=int(input(menu3))
     if (prg==1):
         datost()
@@ -79,6 +76,7 @@ def saldo(d,descuento):
     descuento=d-pago
     print("el total es de",descuento)
     return descuento
+
 def validar(documento):
     validar=documento
     for i in range(len(cliente)):
@@ -87,12 +85,12 @@ def validar(documento):
         if (resultado==True):
             print("el documento no se puede ingresar ya se encuentra registrado un cliente")
             inicio()
-
     return
+
 def datost():
     tam=len(cliente)
     for i in range (tam):
-        print (cliente[i])
+        print ("\n",cliente[i])
     inicio()
 
 def vercliente():
@@ -101,8 +99,9 @@ def vercliente():
         valida=(cliente[i])
         resultado=documento in valida
         if (resultado==True):
-            print(valida)
-            inicio()
+            print()
+            print(valida)        
+    inicio()
             
 
 inicio=inicio()
